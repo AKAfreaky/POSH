@@ -489,6 +489,8 @@ class Agent(AgentBase):
                             predicate = ">"
                         elif predicate in ("not", "!", "!="):
                             predicate = "!="
+						elif predicate in ("gteq", ">="):
+							predicate = ">="
                         else:
                             self.log.error( \
               "Predicate %s invalid for Sense %s" % (str(predicate), name))
