@@ -489,11 +489,9 @@ class Agent(AgentBase):
                             predicate = ">"
                         elif predicate in ("not", "!", "!="):
                             predicate = "!="
-						elif predicate in ("gteq", ">="):
-							predicate = ">="
                         else:
-                            self.log.error( \
-              "Predicate %s invalid for Sense %s" % (str(predicate), name))
+                            self.log.info("Unknown Predicate %s for Sense %s." % (str(predicate), name))
+                            self.log.info("Is [Value] %s [Sense Value] valid python?" % (str(predicate)))
                     else:
                         predicate = "=="
                     # Assign the comparision as a lambda function
